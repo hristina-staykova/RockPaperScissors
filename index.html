@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+  <script>
+    var compArray = ["s", "r", "p"];
+    var user;
+    var comp;
+
+    function play() {
+      var wins = 0, losses = 0, ties = 0;
+      for (var i = 0; i < 5; i++) {
+        user = prompt("Enter your choice: r for Rock, p for Paper or s for Scissors:").toLowerCase();
+        comp = compArray[Math.floor(Math.random() * 3)];
+        alert("The computer chose: " + comp);
+
+        if (user === "r") {
+          if (comp === "s") {
+            wins = wins + 1;
+            alert("You win!");
+          } else if (comp === "p") {
+            losses = losses + 1;
+            alert("You lose!");
+          } else {
+            ties = ties + 1;
+            alert("It's a tie!");
+          }
+        }
+
+        if (user === "p") {
+          if (comp === "r") {
+            wins = wins + 1;
+            alert("You win!");
+          } else if (comp === "s") {
+            losses = losses + 1;
+            alert("You lose!");
+          } else {
+            ties = ties + 1;
+            alert("It's a tie!");
+          }
+        }
+
+        if (user === "s") {
+          if (comp === "p") {
+            wins = wins + 1;
+            alert("You win!");
+
+          } else if (comp === "r") {
+            losses = losses + 1;
+            alert("You lose!");
+          } else {
+            ties = ties + 1;
+            alert("It's a tie!");
+          }
+        }
+      }
+
+      alert("You have played a total of " + i + " games!");
+      alert("Wins: " + wins);
+      alert("Ties: " + ties);
+      alert("Losses: " + losses);
+    }
+
+    play();
+
+    if (confirm("Do you want to play again?")) {
+      play()
+    } else {
+      alert("Thank you!")
+    }
+  </script>
+</body>
+
+</html>
