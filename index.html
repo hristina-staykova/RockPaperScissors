@@ -15,7 +15,12 @@
     function play() {
       var wins = 0, losses = 0, ties = 0;
       for (var i = 0; i < 5; i++) {
-        user = prompt("Enter your choice: r for Rock, p for Paper or s for Scissors:").toLowerCase();
+        user = prompt("Enter your choice: r for Rock, p for Paper or s for Scissors. Press Cancel to exit the game.").toLowerCase();
+
+        while (!(user === "r" || user === "s" || user === "p")) {
+        user = prompt("Wrong entry. Enter your choice: r for Rock, p for Paper, s for Scissors. Press Cancel to exit the game.").toLowerCase();
+        }
+
         comp = compArray[Math.floor(Math.random() * 3)];
         alert("The computer chose: " + comp);
 
